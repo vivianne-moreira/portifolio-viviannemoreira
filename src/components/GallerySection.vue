@@ -1,8 +1,11 @@
 <template>
   <section id="gallery" class="bg-neutral-900 text-white py-24 px-4">
-    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-500 mb-12 text-center tracking-wide">
-      Galeria
-    </h2>
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-pink-500/90">
+        Galeria
+      </h2>
+      <div class="mt-2 w-20 h-1 bg-pink-500/90 mx-auto rounded-full"></div>
+    </div>
 
     <!-- Carrossel de Destaques -->
     <Swiper
@@ -107,6 +110,12 @@ import 'swiper/css/autoplay'
 import sandman from '../assets/images/sandman.jpg'
 import dragao from '../assets/images/dragao.jpg'
 import eu from '../assets/images/eu.jpg'
+import face from '../assets/images/face.jpg'
+import fantasma from '../assets/images/fantasma.jpg'
+import lua from '../assets/images/lua.jpg'
+import realismo from '../assets/images/realismo.jpg'
+import sonhomaluco from '../assets/images/sonhomaluco.jpg'
+import borboleta from '../assets/images/borboleta.jpg'
 
 interface Artwork {
   title: string
@@ -122,6 +131,12 @@ const featuredArtworks: Artwork[] = [
 const artworks: Artwork[] = [
   ...featuredArtworks,
   { title: 'Apenas Eu', description: 'Estudo de desenho adicionado a uma foto.', image: eu },
+  { title: 'Face Sombria', description: 'Exploração de expressões faciais.', image: face },
+  { title: 'Fantasma', description: 'Arte com atmosfera sobrenatural.', image: fantasma },
+  { title: 'Lua', description: 'Ilustração com temática noturna.', image: lua },
+  { title: 'Realismo', description: 'Estudo detalhado de figura humana.', image: realismo },
+  { title: 'Sonho Maluco', description: 'Criação surreal e imaginativa.', image: sonhomaluco },
+  { title: 'Borboleta', description: 'Desenho inspirado na natureza e delicadeza.', image: borboleta },
 ]
 
 const modalArt = ref<Artwork | null>(null)
@@ -131,12 +146,10 @@ function openModal(art: Artwork) {
 </script>
 
 <style>
-/* Suaviza a transição lateral */
 .swiper {
   transition: transform 1.5s ease-in-out;
 }
 
-/* Setas */
 .swiper-button-prev,
 .swiper-button-next {
   color: #ec4899;

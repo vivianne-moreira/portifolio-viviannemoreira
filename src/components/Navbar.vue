@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white backdrop-blur-md shadow-md fixed w-full top-0 left-0 z-50">
+  <nav class="bg-black backdrop-blur-md shadow-md fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
       <h1 class="text-xl font-bold text-blue-700 tracking-wide">Arte & Grafite</h1>
 

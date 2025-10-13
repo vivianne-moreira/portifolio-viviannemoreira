@@ -1,39 +1,40 @@
 <template>
-  <footer className="bg-gray-950 py-10 mt-12 border-t border-gray-800">
-    <div className="container mx-auto px-6 text-center">
-      <h4 className="text-2xl font-bold mb-4 text-white">Entre em Contato</h4>
-      <p className="text-gray-400 mb-6">Fale comigo para encomendas ou colaborações!</p>
-      <div className="flex justify-center flex-wrap space-x-6 text-gray-400">
-        {/* E-mail */}
+  <footer class="bg-black py-10 mt-12">
+    <div class="container mx-auto px-6 text-center">
+      <h4 class="text-2xl font-bold mb-4 text-white">Entre em Contato</h4>
+      <p class="text-gray-400 mb-6">Fale comigo para encomendas ou colaborações!</p>
+
+      <div class="flex justify-center flex-wrap gap-6 text-gray-400">
         <a
-          href="mailto:seu.email@exemplo.com"
-          className="hover:text-purple-400 transition duration-300 flex items-center mb-2"
+          href="mailto:viviane.moreira63@aluno.ifce.edu.br"
+          class="hover:text-purple-400 transition duration-300 flex items-center"
         >
-          <Mail className="w-5 h-5 mr-2" /> seu.email@exemplo.com
-        </a>
-        {/* Redes Sociais Placeholder */}
-        <a
-          href="#"
-          className="hover:text-purple-400 transition duration-300 flex items-center mb-2"
-        >
-          <Instagram className="w-5 h-5 mr-2" /> Instagram
+          <Mail class="w-5 h-5 mr-2" /> viviane.moreira63@aluno.ifce.edu.br
         </a>
         <a
-          href="#"
-          className="hover:text-purple-400 transition duration-300 flex items-center mb-2"
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="hover:text-purple-400 transition duration-300 flex items-center"
         >
-          <Dribbble className="w-5 h-5 mr-2" /> Dribbble
+          <Instagram class="w-5 h-5 mr-2" /> Instagram
         </a>
         <a
-          href="#"
-          className="hover:text-purple-400 transition duration-300 flex items-center mb-2"
+          href="https://www.linkedin.com/"
+          target="_blank"
+          class="hover:text-purple-400 transition duration-300 flex items-center"
         >
-          <Heart className="w-5 h-5 mr-2" /> ArtStation
+          <Linkedin class="w-5 h-5 mr-2" /> LinkedIn
         </a>
       </div>
-      <p className="mt-8 text-sm text-gray-600">
-        © 2025. Desenvolvido com Vue/React e Tailwind CSS.
+
+      <p class="mt-8 text-sm text-gray-600">
+        © 2025. Todos os direitos reservados.
       </p>
     </div>
   </footer>
 </template>
+
+<script setup>
+import { Mail, Instagram, Linkedin } from "lucide-vue-next";
+</script>
+
