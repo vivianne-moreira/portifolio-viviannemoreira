@@ -9,17 +9,17 @@
           href="mailto:viviane.moreira63@aluno.ifce.edu.br"
           class="hover:text-purple-400 transition duration-300 flex items-center"
         >
-          <Mail class="w-5 h-5 mr-2" /> viviane.moreira63@aluno.ifce.edu.br
+          <Mail class="w-5 h-5 mr-2" /> E-mail
         </a>
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/vivianne_moreiramoreira"
           target="_blank"
           class="hover:text-purple-400 transition duration-300 flex items-center"
         >
           <Instagram class="w-5 h-5 mr-2" /> Instagram
         </a>
         <a
-          href="https://www.linkedin.com/"
+          href="https://www.linkedin.com/in/vivianne-dos-santos-moreira-sarmento-a30450287"
           target="_blank"
           class="hover:text-purple-400 transition duration-300 flex items-center"
         >
