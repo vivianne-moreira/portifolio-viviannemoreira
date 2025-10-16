@@ -5,7 +5,6 @@
       <div class="mt-2 w-20 h-1 bg-pink-500/90 mx-auto rounded-full"></div>
     </div>
 
-    <!-- Carrossel de Destaques -->
     <Swiper
       :modules="[Navigation, Pagination, Autoplay]"
       :slides-per-view="1"
@@ -23,20 +22,15 @@
         class="flex flex-col items-center"
       >
         <div class="relative w-full overflow-hidden group">
-          <!-- Imagem quadrada -->
           <img
             :src="art.image"
             :alt="art.title"
             loading="lazy"
             class="w-full h-[400px] lg:h-[620px] object-cover transition-transform duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-105"
           />
-
-          <!-- Gradiente escuro na parte inferior -->
           <div
             class="absolute bottom-0 w-full h-40 bg-gradient-to-t from-black/100 to-transparent"
           ></div>
-
-          <!-- Botão expandir -->
           <button
             @click="openModal(art)"
             class="absolute bottom-4 right-4 bg-pink-500/90 backdrop-blur-md text-white px-4 py-2 rounded-xl shadow-md hover:bg-pink-600 transition-all duration-300"
@@ -47,14 +41,12 @@
       </SwiperSlide>
     </Swiper>
 
-    <!-- Grid da Galeria Completa -->
     <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div
         v-for="(art, index) in artworks"
         :key="index"
         class="bg-neutral-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
       >
-        <!-- Imagem -->
         <div class="w-full h-90 overflow-hidden">
           <img
             :src="art.image"
@@ -64,7 +56,6 @@
           />
         </div>
 
-        <!-- Conteúdo fixo -->
         <div class="p-4 text-center">
           <h3 class="text-lg font-semibold text-white mb-1">{{ art.title }}</h3>
           <p class="text-gray-400 text-sm mb-3">{{ art.description }}</p>
@@ -83,7 +74,6 @@
         <div
           class="relative max-w-3xl w-full h-full flex flex-col items-center justify-center bg-black rounded-lg shadow-2xl overflow-hidden"
         >
-          <!-- Container centraliza a imagem e preenche fundo -->
           <div class="flex items-center justify-center w-full h-full bg-black">
             <img
               :src="modalArt.image"
@@ -92,7 +82,6 @@
             />
           </div>
 
-          <!-- Botão fixo na parte inferior -->
           <button
             @click="modalArt = null"
             class="absolute bottom-6 px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-all duration-300 text-sm sm:text-base"
@@ -124,6 +113,9 @@ import lua from '../assets/images/lua.jpg'
 import realismo from '../assets/images/realismo.jpg'
 import sonhomaluco from '../assets/images/sonhomaluco.jpg'
 import borboleta from '../assets/images/borboleta.jpg'
+import tecnica from '../assets/images/tecnica.jpg'
+import sombra from '../assets/images/sombra.jpg'
+import mentira from '../assets/images/mentira.jpg'
 
 interface Artwork {
   title: string
@@ -133,25 +125,79 @@ interface Artwork {
 
 const featuredArtworks: Artwork[] = [
   {
-    title: 'O Sonhador',
-    description: 'Estudo de personagem inspirado em Sandman.',
+    title: 'Sandman - O Sonhador',
+    description:
+      'Estudo de personagem inspirado em Sandman. O contraste do grafite reflete a dualidade do personagem, encarando o mundo dos sonhos e a realidade.',
     image: sandman,
   },
-  { title: 'O Guardião', description: 'Desenho conceitual de dragão místico.', image: dragao },
+  {
+    title: 'Dragão ou Fênix? Arte',
+    description:
+      'Desenho conceitual de dragão místico inspirado nos traços de uma Fênix. O Desenho foi feito no grafite e preenchido por tinta, enfantizando a ideia de cores quentes com um fundo escuro. Resurgir das cinzas é arte.',
+    image: dragao,
+  },
 ]
 
 const artworks: Artwork[] = [
   ...featuredArtworks,
-  { title: 'Apenas Eu', description: 'Estudo de desenho adicionado a uma foto.', image: eu },
-  { title: 'Face Sombria', description: 'Exploração de expressões faciais.', image: face },
-  { title: 'Fantasma', description: 'Arte com atmosfera sobrenatural.', image: fantasma },
-  { title: 'Lua', description: 'Ilustração com temática noturna.', image: lua },
-  { title: 'Realismo', description: 'Estudo detalhado de figura humana.', image: realismo },
-  { title: 'Sonho Maluco', description: 'Criação surreal e imaginativa.', image: sonhomaluco },
   {
-    title: 'Borboleta',
-    description: 'Desenho inspirado na natureza e delicadeza.',
+    title: 'Apenas Eu',
+    description:
+      'Estudo de desenho adicionado a uma foto. O objetivo foi desenhar um olho e posicioná-lo no espelho de maneira que fizesse parte do meu rosto em um ângulo bom para a captura da imagem.',
+    image: eu,
+  },
+  {
+    title: 'Face e Linhas ou Linhas e Face?',
+    description:
+      'Exploração de expressões faciais por meio de linhas. O uso do grafite nessa obra permite que a imaginação flua de tal modo a indagar o público: é uma face feita por linhas ou apenas linhas que se parecem com uma face?',
+    image: face,
+  },
+  {
+    title: 'Fantasma Cafeinado',
+    description: 'Arte com atmosfera sobrenatural e um tanto simpática. Fantasma também bebe café!',
+    image: fantasma,
+  },
+  {
+    title: 'Lua',
+    description:
+      'Ilustração com temática lunática na qual remete a ideia de "cabeça na lua". O desenho foi inspirado na música "Dias da Juventude" - Terno Rei.',
+    image: lua,
+  },
+  {
+    title: 'Edvin Ryding',
+    description:
+      'Estudo de desenho realistico. A respectiva arte retrata o ator Edvin Ryding. Uso apenas de grafite com uso de técnicas.',
+    image: realismo,
+  },
+  {
+    title: 'Sonho Maluco',
+    description:
+      'Criação surreal e imaginativa. Para algumas pessoas, os sonhos podem ter um significado por trás. Ou talvez não... ou talvez é apenas um dinossauro correndo atrás de você. Obra com dois pontos de fuga além do uso de sombreamento.',
+    image: sonhomaluco,
+  },
+  {
+    title: 'Borboletas',
+    description:
+      'Apenas uma garota que se sente caindo, mas não tem chão onde cair. Logo, de tanto estar em queda livre, a mesma se sente como uma borboleta. Essa obra não é sobre borboletas.',
     image: borboleta,
+  },
+  {
+    title: 'Técnica',
+    description:
+      'Uma representação de uma pessoa que está submersa em um turbilhão de fórmulas matemáticas e símbolos abstratos, sugerindo a busca incessante por soluções, a pressão do conhecimento ou a própria natureza lógica do universo que a arte tenta decifrar. Nem sempre o que calculamos chega no resultado que esperamos.',
+    image: tecnica,
+  },
+  {
+    title: 'A Sombra Daquele Artista',
+    description:
+      'Uma obra de forte atmosfera e profundo uso de luz e sombra. O vulto humano, emergindo de uma névoa densa, evoca sentimentos de isolamento, medo ou uma tentativa de conexão. A textura granulada e o alto contraste criam um efeito quase fantasmagórico, transformando a figura em uma sombra, um reflexo do subconsciente ou uma metáfora para a ansiedade.',
+    image: sombra,
+  },
+  {
+    title: 'A Máscara da Mentira',
+    description:
+      'Utilizando um estilo que transita entre o anime e o realismo, a obra explora a tensão entre o que é mostrado e o que é sentido, convidando o observador a questionar a verdade por trás da fachada.',
+    image: mentira,
   },
 ]
 
